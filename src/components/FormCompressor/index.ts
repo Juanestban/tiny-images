@@ -1,0 +1,1 @@
+export { FormCompressor } from './FormCompressor';

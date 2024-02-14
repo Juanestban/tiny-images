@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter } from 'react-router-dom';
+
+import { Anchor, GithubIcon } from '@/components';
+import AppRoute from '@/config/AppRoute';
+
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <BrowserRouter basename="/">
+      <header className="flex justify-between items-center px-28">
+        <Anchor to="/" className="m-0 p-0">
+          <h1 className="text-2xl m-0 p-0">Minify Images</h1>
+        </Anchor>
+        <nav className="p-0 m-0">
+          <ul className="p-0 m-0 flex gap-2">
+            <li className="flex items-center">
+              <Anchor to="/">Home</Anchor>
+            </li>
+            <li className="flex items-center">
+              <Anchor to="https://www.npmjs.com/package/compressor-image" target="_blank">
+                Install
+              </Anchor>
+            </li>
+            <li className="flex items-center">
+              <a href="https://github.com/Juanestban" target="_blank">
+                <GithubIcon />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main className="flex flex-col justify-between">
+        <AppRoute />
+        <footer className="text-center p-4">
+          <h2>©Copyright - Juanestban 2024</h2>
+        </footer>
+      </main>
+      <div className="polygon">
+        <div className="circle size-custom-1" />
+        <div className="circle size-custom-2" />
+        <div className="circle size-custom-3" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

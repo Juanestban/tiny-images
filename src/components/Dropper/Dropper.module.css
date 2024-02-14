@@ -1,0 +1,27 @@
+.card {
+  height: 400px;
+}
+
+.notUploading {
+  border-color: transparent;
+}
+
+.uploadDefault {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    transform 500ms ease,
+    opacity 500ms ease,
+    visibility 500ms ease;
+}
+
+.uploadDrop {
+  opacity: 0;
+  transform: translateY(-50%);
+  visibility: hidden;
+  transition:
+    transform 500ms ease,
+    opacity 500ms ease,
+    visibility 500ms ease;
+}
